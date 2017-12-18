@@ -28,6 +28,6 @@ quiet_cmd_bc  = BC      $@
       cmd_bc  = bc -q $(filter-out FORCE,$^) > $@
 
 targets += timeconst.bc
-$(obj)/timeconst.h: $(obj)/hz.bc $(src)/timeconst.h FORCE
+$(obj)/timeconst.bc: $(obj)/hz.h $(src)/timeconst.h FORCE
 	$(call if_changed,hzfile)
 
