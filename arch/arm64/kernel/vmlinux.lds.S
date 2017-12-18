@@ -24,11 +24,7 @@
 OUTPUT_ARCH(aarch64)
 ENTRY(_text)
 
-#ifndef __ARMEB__
 jiffies = jiffies_64;
-#else
-jiffies = jiffies_64 + 4;
-#endif
 
 #define HYPERVISOR_TEXT					\
 	/*						\
