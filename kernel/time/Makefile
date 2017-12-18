@@ -27,7 +27,7 @@ $(obj)/hz.bc: $(objtree)/include/config/hz.h FORCE
 quiet_cmd_bc  = BC      $@
       cmd_bc  = bc -q $(filter-out FORCE,$^) > $@
 
-targets += timeconst.h
-$(obj)/timeconst.h: $(obj)/hz.bc $(src)/timeconst.bc FORCE
-	$(call if_changed,bc)
+targets += timeconst.bc
+$(obj)/timeconst.h: $(obj)/hz.bc $(src)/timeconst.h FORCE
+	$(call if_changed,hzfile)
 
